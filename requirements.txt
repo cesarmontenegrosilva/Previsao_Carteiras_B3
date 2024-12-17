@@ -1,0 +1,10 @@
+yfinance
+pandas
+google-cloud-storage
+numpy
+matplotlib 
+seaborn 
+tensorflow
+python-dotenv
+kaleido
+plotly

@@ -1,0 +1,52 @@
+                         ┌───────────────────────────┐
+                         │          Usuário          │
+                         └───────┬───────────────────┘
+                                 │ Execução local do script Python
+                                 │ (agendado via Windows Task Scheduler)
+                                 ▼
+                       ┌───────────────────────────┐
+                       │       Coleta de Dados      │
+                       │(Rodando Localmente: Baixa  │
+                       │ dados da B3 e gera CSV)    │
+                       └───────┬───────────────────┘
+                               │ Upload CSV 
+                               ▼
+                     ┌───────────────────────────┐
+                     │          GCS               │
+                     │(Armazena dados dos ativos) │
+                     └───────┬───────────────────┘
+                             │ Trigger/Execução manual
+                             ▼
+                     ┌───────────────────────────┐
+                     │         Vertex AI          │
+                     │   (Notebook: Tratamento,   │
+                     │    criação de carteiras e  │
+                     │    treinamento LSTM)       │
+                     └───────┬───────────────────┘
+                             │ Leitura CSV do GCS
+                             │ Processa retornos, define carteiras (sem ^BVSP)
+                             │ Treina modelos LSTM e gera previsões 60 dias
+                             │ Cria DataFrames (previsões, composição, gráfico)
+                             ▼
+                     ┌───────────────────────────┐
+                     │          GCS               │
+                     │ (Armazena resultados:      │
+                     │  CSV predições, ativos,    │
+                     │  gráficos HTML/PNG)        │
+                     └───────┬───────────────────┘
+                             │ Load CSV -> BigQuery
+                             ▼
+                     ┌───────────────────────────┐
+                     │         BigQuery           │
+                     │ (Tabelas: previsões,       │
+                     │  carteiras_ativos, etc.)   │
+                     └───────┬───────────────────┘
+                             │
+                             │ Conexão via Looker Studio
+                             ▼
+                     ┌───────────────────────────┐
+                     │       Looker Studio        │
+                     │ (Dashboard interativo:     │
+                     │ histórico vs previsões,     │
+                     │ composição das carteiras)   │
+                     └───────────────────────────┘
