@@ -9,7 +9,7 @@ O tratamento dos dados, criação das carteiras, construção e treinamento da L
 
 1 - Repositório Github: https://github.com/cesarmontenegrosilva/Previsao_Carteiras_B3.git
 
-2 - LOOKER STUDIO Dashboard: [https://lookerstudio.google.com/u/0/reporting/b4ddffe1-8bf7-4c8c-995c-244e8a2fa081/page/p_hlc7j9nxnd](https://lookerstudio.google.com/reporting/b4ddffe1-8bf7-4c8c-995c-244e8a2fa081)
+2 - LOOKER STUDIO Dashboard: [[https://lookerstudio.google.com/u/0/reporting/b4ddffe1-8bf7-4c8c-995c-244e8a2fa081/page/p_hlc7j9nxnd](https://lookerstudio.google.com/reporting/b4ddffe1-8bf7-4c8c-995c-244e8a2fa081)](https://lookerstudio.google.com/reporting/b4ddffe1-8bf7-4c8c-995c-244e8a2fa081)
 
 3 - Link video YouTube: https://www.youtube.com/watch?v=bKyGZeTdvms
 
